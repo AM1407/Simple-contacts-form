@@ -70,9 +70,9 @@ function displayContacts() {
 
     contacts.forEach((contact) => {
         const div = document.createElement("div");
-        div.classList.add("card", "col-md-2");
+        div.classList.add("card", "col-md-2", "m-2", "p-0");
         const cardBody = document.createElement("div");
-        cardBody.classList.add("card-body");
+        cardBody.classList.add("card-body", "position-relative");
         cardBody.innerHTML = `
             <h5 class="card-title">${contact.name}</h5>
             <p class="card-text">Phone: ${contact.phone}</p>
@@ -81,7 +81,7 @@ function displayContacts() {
 
         const deleteBtn = document.createElement("button");
 
-        deleteBtn.classList.add("btn-close")
+        deleteBtn.classList.add("btn-close", "position-absolute", "top-0", "end-0", "m-2");
         deleteBtn.setAttribute("aria-label", "Delete contact");
 
         deleteBtn.addEventListener("click", function () {

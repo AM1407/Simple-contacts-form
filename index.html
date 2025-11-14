@@ -5,16 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" href="style.css">
+</head>
   <body>
-    <form class="d-flex align-items-center m-2">
-        <input type="text" id="contactName" placeholder="name" class="form-control m-1">
-        <input type="text" id="contactPhone" placeholder="phonenumber" class="form-control m-1">
-        <input type="text" id="contactEmail" placeholder="e-mail address" class="form-control m-1">
-        <button type="button" id="addContactBtn" class="btn btn-outline-secondary m-1">Add contact</button>
-        
-        <button type="button" id="clearContactBtn" class="btn btn-danger m-1">Clear All</button>
-    </form>
+    <div class="managerHead d-flex flex-column align-items-center">
+        <h2>Contact Manager</h2>
+        <form class="inputForm d-flex align-items-center m-2 flex-column w-25">
+
+            <div class="form-floating m-1 w-100">
+                <input type="text" id="contactName" placeholder="Name" class="form-control">
+                <label for="contactName">Name</label>
+            </div>
+
+            <div class="form-floating m-1 w-100">
+                <input type="text" id="contactPhone" placeholder="Phone Number" class="form-control">
+                <label for="contactPhone">Phone Number</label>
+            </div>
+
+            <div class="form-floating m-1 w-100">
+                <input type="email" id="contactEmail" placeholder="E-mail Address" class="form-control">
+                <label for="contactEmail">E-mail Address</label>
+            </div>
+
+            <div class="btn-group d-flex flex-row align-items-center w-50" role="group">
+                <button type="button" id="addContactBtn" class="btn btn-outline-dark">Add contact</button>
+                <button type="button" id="clearContactBtn" class="btn btn-outline-dark">Clear All</button>
+            </div>
+
+        </form>
+    </div>
     <div class="row" id="contactList"></div>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

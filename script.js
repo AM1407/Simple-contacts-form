@@ -70,7 +70,7 @@ function displayContacts() {
 
     contacts.forEach((contact) => {
         const div = document.createElement("div");
-        div.classList.add("card", "col-md-4");
+        div.classList.add("card", "col-md-2");
         const cardBody = document.createElement("div");
         cardBody.classList.add("card-body");
         cardBody.innerHTML = `

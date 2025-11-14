@@ -10,7 +10,6 @@ A simple and responsive contact manager application built with vanilla JavaScrip
 
 ## 📸 Preview
 
-(This is the most important part! Be sure to take a screenshot of your finished app, add it to your project folder as `contact-list-screenshot.png`, and replace this text with the image!)
 
 ![A screenshot of the Contact List application, showing the form and contact cards.](img/ExampleContactForm.png)
 

@@ -6,10 +6,11 @@
     const contactList = document.getElementById("contactList");
     const clearContactBtn = document.getElementById("clearContactBtn");
 
+    function init() {
+
     addContactBtn.addEventListener("click", addContact);
     clearContactBtn.addEventListener("click", clearContacts);
 
-    function init() {
     
 
     contactEmail.addEventListener("keydown", function (event) {

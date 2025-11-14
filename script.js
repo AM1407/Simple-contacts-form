@@ -59,7 +59,6 @@ function addContact() {
 }
 
 function displayContacts() {
-    const contactList = document.getElementById("contactList");
     const contacts = getContactsFromStorage();
 
     contactList.innerHTML = "";

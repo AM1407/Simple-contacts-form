@@ -4,10 +4,25 @@ function init() {
     const contactEmail = document.getElementById("contactEmail");
     const addContactBtn = document.getElementById("addContactBtn");
     const contactList = document.getElementById("contactList");
+    const clearContactBtn = document.getElementById("clearContactBtn");
 
     addContactBtn.addEventListener("click", addContact);
+    clearContactBtn.addEventListener("click", clearContacts);
+    
 
-    contactName, contactPhone, contactEmail.addEventListener("keydown", function (event) {
+    contactEmail.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            addContact();
+        }
+    });
+
+    contactName.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            addContact();
+        }
+    });
+
+    contactPhone.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             addContact();
         }
@@ -47,7 +62,7 @@ function displayContacts() {
     contactList.innerHTML = "";
 
     if (contacts.length === 0) {
-        contactList.innerHTML = "<li>No contacts yet.</li>";
+        contactList.innerHTML = "<p>No contacts available.</p>";
         return;
     }
 
@@ -61,10 +76,51 @@ function displayContacts() {
             <p class="card-text">Phone: ${contact.phone}</p>
             <p class="card-text">Email: ${contact.email}</p>
         `;
+
+        const deleteBtn = document.createElement("button");
+
+        deleteBtn.classList.add("btn-close")
+        deleteBtn.setAttribute("aria-label", "Delete contact");
+
+        deleteBtn.addEventListener("click", function () {
+            deleteContact(contact.id);
+        });
+        
+        cardBody.appendChild(deleteBtn);
         div.appendChild(cardBody);
         contactList.appendChild(div);
     });
 }
+
+function getContactsFromStorage() {
+    const contacts = localStorage.getItem("contacts");
+    
+    if (contacts === null) {
+        return [];
+    }
+
+    return JSON.parse(contacts);
+}
+
+function deleteContact(id) {
+    const contacts = getContactsFromStorage();
+
+    const updatedContacts = contacts.filter( function (contact) {
+        return contact.id !== id;
+    });
+
+    localStorage.setItem("contacts", JSON.stringify(updatedContacts));
+    displayContacts();
+}
+
+function clearContacts() {
+    localStorage.removeItem("contacts");
+    displayContacts();
+}
+
+init();
+
+
 
 
     

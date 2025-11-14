@@ -1,4 +1,4 @@
-function init() {
+
     const contactName = document.getElementById("contactName");
     const contactPhone = document.getElementById("contactPhone");
     const contactEmail = document.getElementById("contactEmail");
@@ -8,6 +8,8 @@ function init() {
 
     addContactBtn.addEventListener("click", addContact);
     clearContactBtn.addEventListener("click", clearContacts);
+
+    function init() {
     
 
     contactEmail.addEventListener("keydown", function (event) {
